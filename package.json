@@ -1,0 +1,22 @@
+{
+  "name": "ecopulse-web",
+  "version": "0.1.0",
+  "description": "EcoPulse — plataforma interactiva de monitoreo ambiental urbano y mapas comunitarios en tiempo real.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "live-server --port=5173 --no-browser .",
+    "start": "live-server --port=5173 ."
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "keywords": [
+    "ecopulse",
+    "monitoreo-ambiental",
+    "calidad-del-aire",
+    "frontend"
+  ],
+  "author": "",
+  "license": "UNLICENSED"
+}

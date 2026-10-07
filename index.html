@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoPulse — Monitoreo ambiental urbano en tiempo real</title>
+  <meta name="description" content="EcoPulse muestra calidad del aire, niveles de ruido e iniciativas ecológicas de tu ciudad en un mapa vivo y actualizado en tiempo real." />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0b0f1a" />
+
+  <!-- Tipografía: Space Grotesk para titulares técnicos, Plus Jakarta Sans para texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="src/css/main.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header" data-navbar>
+    <div class="container header-inner">
+      <a class="logo" href="#inicio" aria-label="EcoPulse, ir al inicio">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2" opacity="0.35"/>
+            <path d="M4 18 Q10 10 16 18 T28 18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="logo-word">EcoPulse</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link is-active" data-nav-link>Inicio</a></li>
+          <li><a href="#metricas" class="nav-link" data-nav-link>Métricas en Vivo</a></li>
+          <li><a href="#galeria" class="nav-link" data-nav-link>Casos de Éxito</a></li>
+          <li><a href="#contacto" class="nav-link" data-nav-link>Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/images/hero-bg.jpg">
+          <source src="assets/videos/intro-preview.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-scrim"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <p class="eyebrow-badge">Puebla · Ciudad de México · Guadalajara</p>
+        <h1 class="hero-title">
+          El pulso ambiental de tu ciudad,<br class="hero-break" />
+          medido cada segundo.
+        </h1>
+        <p class="hero-lede">
+          EcoPulse conecta sensores comunitarios de aire y ruido con un mapa vivo,
+          para que vecinos, colectivos y gobiernos locales tomen decisiones con datos reales — no con promesas.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#metricas" class="btn btn-primary">Ver métricas en vivo</a>
+          <a href="#galeria" class="btn btn-ghost">Conocer casos de éxito</a>
+        </div>
+
+        <dl class="hero-stat-strip" aria-label="Resumen en tiempo real">
+          <div class="hero-stat">
+            <dt>Sensores activos</dt>
+            <dd data-counter data-target="1284">0</dd>
+          </div>
+          <div class="hero-stat">
+            <dt>Ciudades conectadas</dt>
+            <dd data-counter data-target="37">0</dd>
+          </div>
+          <div class="hero-stat">
+            <dt>Lecturas hoy</dt>
+            <dd data-counter data-target="592410">0</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- MÉTRICAS EN VIVO -->
+    <section class="metrics" id="metricas">
+      <div class="container">
+        <div class="section-head">
+          <h2>Métricas en vivo</h2>
+          <p>Datos agregados de la red de sensores comunitarios, actualizados cada 5 minutos.</p>
+        </div>
+
+        <div class="metric-grid" role="list">
+
+          <article class="metric-card metric-card--air" role="listitem">
+            <div class="metric-card-top">
+              <span class="metric-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M3 8h11a3 3 0 1 0-3-3M3 14h15a3 3 0 1 1-3 3M3 20h9" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="metric-status metric-status--good">Buena</span>
+            </div>
+            <h3>Calidad del aire</h3>
+            <p class="metric-value">42 <span>ICA</span></p>
+            <svg class="metric-spark" viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true">
+              <polyline points="0,24 15,20 30,22 45,14 60,17 75,9 90,12 105,6 120,10" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <p class="metric-note">PM2.5 promedio: 11 µg/m³ en las últimas 3 horas.</p>
+          </article>
+
+          <article class="metric-card metric-card--noise" role="listitem">
+            <div class="metric-card-top">
+              <span class="metric-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M3 10v4h4l5 5V5L7 10H3Z" stroke-linejoin="round"/>
+                  <path d="M16 9a5 5 0 0 1 0 6" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="metric-status metric-status--warn">Moderado</span>
+            </div>
+            <h3>Nivel de ruido</h3>
+            <p class="metric-value">67 <span>dB</span></p>
+            <svg class="metric-spark" viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true">
+              <polyline points="0,18 15,22 30,10 45,16 60,8 75,14 90,6 105,15 120,11" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <p class="metric-note">Pico registrado a las 18:20 cerca de Av. Reforma.</p>
+          </article>
+
+          <article class="metric-card metric-card--green" role="listitem">
+            <div class="metric-card-top">
+              <span class="metric-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 21c-4-1-7-5-7-10a7 7 0 0 1 14 0c0 5-3 9-7 10Z" stroke-linejoin="round"/>
+                  <path d="M12 11v10" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="metric-status metric-status--good">Creciendo</span>
+            </div>
+            <h3>Cobertura verde</h3>
+            <p class="metric-value">28.4 <span>%</span></p>
+            <svg class="metric-spark" viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true">
+              <polyline points="0,26 15,25 30,23 45,21 60,18 75,15 90,13 105,9 120,7" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <p class="metric-note">+3.1 puntos desde el último censo de arbolado.</p>
+          </article>
+
+          <article class="metric-card metric-card--water" role="listitem">
+            <div class="metric-card-top">
+              <span class="metric-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 3c3 4 6 7.5 6 11.5A6 6 0 0 1 6 14.5C6 10.5 9 7 12 3Z" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="metric-status metric-status--good">Estable</span>
+            </div>
+            <h3>Calidad del agua</h3>
+            <p class="metric-value">7.2 <span>pH</span></p>
+            <svg class="metric-spark" viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true">
+              <polyline points="0,16 15,17 30,15 45,16 60,14 75,15 90,16 105,14 120,15" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <p class="metric-note">Muestreo semanal en 12 puntos del río urbano.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CASOS DE ÉXITO / GALERÍA -->
+    <section class="gallery" id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <h2>Casos de éxito</h2>
+          <p>Comunidades que usan EcoPulse para respaldar decisiones con datos, no con suposiciones.</p>
+        </div>
+
+        <div class="gallery-grid" data-gallery>
+
+          <figure class="gallery-item" data-gallery-item>
+            <img
+              src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=70"
+              alt="Ciclovía arbolada en una avenida urbana, usada como corredor verde para monitoreo de aire"
+              loading="lazy" width="800" height="600" />
+            <figcaption>
+              <h3>Corredor Verde Reforma</h3>
+              <p>Una ciclovía arbolada redujo el ICA promedio en 18% en dos años de monitoreo continuo.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-gallery-item>
+            <img
+              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=70"
+              alt="Vecinos revisando un panel de sensores comunitarios instalado en una plaza pública"
+              loading="lazy" width="800" height="600" />
+            <figcaption>
+              <h3>Plaza Sensorizada Centro</h3>
+              <p>Doce sensores comunitarios alertan a los vecinos cuando el ruido supera niveles saludables.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-gallery-item>
+            <img
+              src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=70"
+              alt="Techo verde con vegetación instalado sobre un edificio residencial en la ciudad"
+              loading="lazy" width="800" height="600" />
+            <figcaption>
+              <h3>Azoteas Vivas Norte</h3>
+              <p>40 techos verdes nuevos elevaron la cobertura vegetal del barrio en un solo año.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-gallery-item>
+            <img
+              src="https://images.unsplash.com/photo-1519832979-6fa011b87667?auto=format&fit=crop&w=800&q=70"
+              alt="Río urbano limpio atravesando un parque, punto de muestreo de calidad del agua"
+              loading="lazy" width="800" height="600" />
+            <figcaption>
+              <h3>Río Urbano Sur</h3>
+              <p>El muestreo semanal ayudó a detectar y corregir una descarga irregular en tres semanas.</p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <h2>Lleva EcoPulse a tu comunidad</h2>
+          <p>
+            Cuéntanos sobre tu colonia, colectivo o gobierno local. Te ayudamos a instalar
+            sensores comunitarios y a abrir tu propio panel público en cuestión de semanas.
+          </p>
+          <ul class="contact-badges">
+            <li class="badge">Instalación en 15 días</li>
+            <li class="badge">Datos abiertos por defecto</li>
+            <li class="badge">Soporte en español</li>
+          </ul>
+        </div>
+
+        <form class="contact-form" data-contact-form novalidate>
+          <div class="form-row">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Correo</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="form-row">
+            <label for="city">Ciudad o colonia</label>
+            <input type="text" id="city" name="city" required autocomplete="address-level2" />
+          </div>
+          <div class="form-row">
+            <label for="message">Cuéntanos tu caso</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Solicitar información</button>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-word">EcoPulse</span>
+        <p>Monitoreo ambiental urbano, sostenido por la gente que vive en cada colonia.</p>
+      </div>
+      <nav aria-label="Enlaces del pie de página">
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#metricas">Métricas en Vivo</a></li>
+          <li><a href="#galeria">Casos de Éxito</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <p class="footer-legal">© 2026 EcoPulse. Datos con fines demostrativos.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="src/js/main.js"></script>
+  <!-- Registro del Service Worker para PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service.worker.js')
+          .then((registration) => {
+            console.log('Service Worker registrado con éxito:', registration.scope);
+          })
+          .catch((error) => {
+            console.error('Error al registrar el Service Worker:', error);
+          });
+      });
+    }
+  </script>
+
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
+</body>
+</html>
